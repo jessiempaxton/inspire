@@ -1,4 +1,4 @@
-import Todo from "../../models/todo";
+import Todo from "../../models/todo.js";
 
 // @ts-ignore
 Todo
@@ -11,6 +11,7 @@ let _state = {
 	todos: [],
 	error: {},
 }
+
 let _subscribers = {
 	todos: [],
 	error: []
@@ -31,11 +32,11 @@ export default class TodoService {
 	}
 
 	getTodos() {
-		console.log("Getting the Todo List")
+		// console.log("Getting the Todo List")
 		todoApi.get()
 			.then(res => {
-				// WHAT DO YOU DO WITH THE RESPONSE?
-				_setState('todo', data)
+				let data = res.data.data.map(rawData => new Todo(rawData))
+				_setState('todos', data)
 			})
 			.catch(err => _setState('error', err.response.data))
 	}
@@ -43,7 +44,6 @@ export default class TodoService {
 	addTodo(todo) {
 		todoApi.post('', todo)
 			.then(res => {
-				// WHAT DO YOU DO AFTER CREATING A NEW TODO?
 				this.getTodos()
 			})
 			.catch(err => _setState('error', err.response.data))
@@ -51,20 +51,20 @@ export default class TodoService {
 
 	toggleTodoStatus(todoId) {
 		let todo = _state.todos.find(todo => todo._id == todoId)
-		// Be sure to change the completed property to its opposite
-		// todo.completed = !todo.completed <-- THIS FLIPS A BOOL
+		todo.completed = !todo.completed
 
 		todoApi.put(todoId, todo)
 			.then(res => {
-				//DO YOU WANT TO DO ANYTHING WITH THIS?
+				this.getTodos()
 			})
 			.catch(err => _setState('error', err.response.data))
 	}
 
 	removeTodo(todoId) {
-		// This one is on you to write.... 
-		// The http method is delete at the todoId
-
+		todoApi.delete(todoId)
+			.then(res => {
+				this.getTodos()
+			})
 	}
 
 }

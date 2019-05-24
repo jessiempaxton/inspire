@@ -4,11 +4,17 @@ const _todoService = new TodoService()
 
 function _drawTodos() {
 	//WHAT IS MY PURPOSE?
+	let todos = _todoService.getTodos
+	let template = ''
+	todos.forEach(todo => {
+		template += todo.Template
+	})
+	document.getElementById('todo').innerHTML = template
 }
 
 function _drawError() {
 	console.error('[TODO ERROR]', _todoService.TodoError)
-	//document.querySelector('#todo-error').textContent = `${_todoService.TodoError.message}`
+	document.querySelector('#todo-error').textContent = `${_todoService.TodoError.message}`
 }
 
 

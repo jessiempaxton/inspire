@@ -3,4 +3,11 @@ export default class Todo {
     this.message = data.message
     this.data = data.data
   }
+
+  get Template() {
+    return `
+    
+    `
+  }
+
 }
