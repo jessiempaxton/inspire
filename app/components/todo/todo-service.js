@@ -26,6 +26,9 @@ export default class TodoService {
 	get TodoError() {
 		return _state.error
 	}
+	get Todos() {
+		return _state.todos
+	}
 
 	addSubscriber(prop, fn) {
 		_subscribers[prop].push(fn)
@@ -38,7 +41,7 @@ export default class TodoService {
 				let data = res.data.data.map(rawData => new Todo(rawData))
 				_setState('todos', data)
 			})
-			.catch(err => _setState('error', err.response.data))
+			.catch(err => _setState('error', err))
 	}
 
 	addTodo(todo) {
@@ -46,7 +49,7 @@ export default class TodoService {
 			.then(res => {
 				this.getTodos()
 			})
-			.catch(err => _setState('error', err.response.data))
+			.catch(err => _setState('error', err))
 	}
 
 	toggleTodoStatus(todoId) {

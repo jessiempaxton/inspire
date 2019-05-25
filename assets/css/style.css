@@ -2,3 +2,7 @@
   color: red;
   font-size: 2em;
 }
+
+.strike {
+  text-decoration: line-through;
+}

@@ -3,13 +3,12 @@ import TodoService from "./todo-service.js";
 const _todoService = new TodoService()
 
 function _drawTodos() {
-	//WHAT IS MY PURPOSE?
-	let todos = _todoService.getTodos
+	let todos = _todoService.Todos
 	let template = ''
 	todos.forEach(todo => {
 		template += todo.Template
 	})
-	document.getElementById('todo').innerHTML = template
+	document.getElementById('todos').innerHTML = template
 }
 
 function _drawError() {
@@ -22,26 +21,24 @@ export default class TodoController {
 	constructor() {
 		_todoService.addSubscriber('error', _drawError)
 		_todoService.getTodos()
-		// Don't forget to add your subscriber
+		_todoService.addSubscriber('todos', _drawTodos)
 	}
 
 	addTodo(e) {
 		e.preventDefault()
 		var form = e.target
 		var todo = {
-			// DONT FORGET TO BUILD YOUR TODO OBJECT
+			description: form.todo.value,
 		}
-
+		console.log('it works', todo)
 		_todoService.addTodo(todo)
 	}
 
 	toggleTodoStatus(todoId) {
-		// asks the service to edit the todo status
 		_todoService.toggleTodoStatus(todoId)
 	}
 
 	removeTodo(todoId) {
-		// ask the service to run the remove todo with this id
 		_todoService.removeTodo(todoId)
 	}
 

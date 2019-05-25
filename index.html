@@ -24,11 +24,18 @@
 	</div>
 
 	<div id="todo">
-		A Todo List
 		<div id="todo-error"></div>
-		<form onsubmit=""></form>
-		<div id="todos"></div>
+		<form onsubmit="app.controllers.todoController.addTodo(event)">
+			<label for="todo">To Do:</label>
+			<input type="text" class="form-control" id="todo" name="todo" placeholder="Task">
+			<button type="submit" class="btn btn-primary">Submit</button>
 	</div>
+	</form>
+	<div>
+		<ul id="todos">
+		</ul>
+	</div>
+
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
 	<script type="module" src="app/main.js"></script>
