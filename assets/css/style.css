@@ -6,3 +6,11 @@
 .strike {
   text-decoration: line-through;
 }
+
+#bg-image {
+  background-image: cover;
+}
+
+*{
+
+}
