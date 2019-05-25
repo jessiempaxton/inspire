@@ -7,10 +7,26 @@
   text-decoration: line-through;
 }
 
-#bg-image {
-  background-image: cover;
+#image-data {
+  background-size: cover;
 }
 
-*{
+#weather {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
 
+.main {
+  display: flex;
+  height: 50vh;
+  width: 100vh;
+  align-items: center;
+}
+
+#todo {
+  display: flex;
+  align-items: flex-end;
+  height: 30%;
+  width: 100%;
 }

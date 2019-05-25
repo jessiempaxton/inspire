@@ -11,25 +11,31 @@
 	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body id="bg-image">
-	<header class="h100 container-fluid">
-		<div class="row h-100">
-			<div class="col h-100" id="image-data">
+<body>
+	<header class="container-fluid">
+		<div class="row">
+			<div class="col" id="image-data">
 			</div>
 		</div>
-		<div id="weather">
+		<div class="row">
+			<div class="col align-items-flex-start justify-content-flex-end" id="weather">
+			</div>
 		</div>
 	</header>
-	<main class="container-fluid">
-		<div id="quote">
+	<main class="main container-fluid">
+		<div class="row">
+			<div class="col-12">
+				<div id="quote">
+				</div>
+			</div>
 		</div>
 	</main>
-	<footer class="containerfluid">
+	<footer class="container-fluid">
 		<div class="row" id="todo">
 			<div class="col-12" id="todo-error"></div>
 			<form onsubmit="app.controllers.todoController.addTodo(event)">
 				<label for="todo">To Do:</label>
-				<input type="text" class="form-control" id="todo" name="todo" placeholder="Task">
+				<input type="text" class="form-control" id="todo" name="todo" placeholder="Add a Task">
 				<button type="submit" class="btn btn-primary">Submit</button>
 		</div>
 		</form>
