@@ -4,7 +4,7 @@ const _is = new ImageService()
 
 function _drawImage() {
   let image = _is.Image
-  document.querySelector('#bg-image').style.backgroundImage = `url('${image.large_url}')`
+  document.querySelector('#bg-image').style.backgroundImage = `url('${image.url}')`
 }
 
 export default class ImageController {

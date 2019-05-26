@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body>
+<body id="bg-image">
 	<header class="container-fluid">
 		<div class="row">
 			<div class="col" id="image-data">
@@ -23,14 +23,14 @@
 		</div>
 	</header>
 	<main class="main container-fluid">
+	</main>
+	<footer class="container-fluid">
 		<div class="row">
 			<div class="col-12">
 				<div id="quote">
 				</div>
 			</div>
 		</div>
-	</main>
-	<footer class="container-fluid">
 		<div class="row" id="todo">
 			<div class="col-12" id="todo-error"></div>
 			<form onsubmit="app.controllers.todoController.addTodo(event)">

@@ -7,7 +7,7 @@
   text-decoration: line-through;
 }
 
-#image-data {
+#bg-image {
   background-size: cover;
 }
 
@@ -16,13 +16,13 @@
   align-items: flex-start;
   justify-content: flex-end;
 }
-
+/* 
 .main {
   display: flex;
-  height: 50vh;
+  height: 100vh;
   width: 100vh;
   align-items: center;
-}
+} */
 
 #todo {
   display: flex;
