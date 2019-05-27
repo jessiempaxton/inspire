@@ -1,6 +1,17 @@
+* {
+}
+
 #todo-error{
   color: red;
   font-size: 2em;
+}
+
+.main {
+  height: 65%;
+}
+
+#header {
+  padding-top: 5vh;
 }
 
 .strike {
@@ -8,25 +19,32 @@
 }
 
 #bg-image {
+ background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
+  height: 100vh;  
 }
 
 #weather {
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
-}
-/* 
-.main {
-  display: flex;
-  height: 100vh;
-  width: 100vh;
-  align-items: center;
-} */
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.667), 1px -1px 0 rgba(0, 0, 0, 0.667), -1px 1px 0 rgba(0, 0, 0, 0.667), 1px 1px 0 rgba(0, 0, 0, 0.667);
+  color: white; 
 
-#todo {
+}
+  /* text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; */
+
+#quote {
   display: flex;
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.667), 1px -1px 0 rgba(0, 0, 0, 0.667), -1px 1px 0 rgba(0, 0, 0, 0.667), 1px 1px 0 rgba(0, 0, 0, 0.667);
+  color: white; 
+  justify-content: baseline;
   align-items: flex-end;
-  height: 30%;
-  width: 100%;
+  font-size: inherit;
+  height: 15%;
+}
+
+input [type=text] {
+  border: none;
 }

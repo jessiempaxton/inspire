@@ -17,31 +17,52 @@
 			<div class="col" id="image-data">
 			</div>
 		</div>
-		<div class="row">
-			<div class="col align-items-flex-start justify-content-flex-end" id="weather">
+		<div class="row" id="header">
+			<div class="col-6 align-items-flex-start justify-content-flex-start">
+				<script language="JavaScript">
+					function gettime() {
+						var date = new Date();
+						var hr = date.getHours();
+						var m = date.getMinutes();
+						var s = date.getSeconds();
+						if (m < 10) {
+							m = "0" + m
+						}
+						if (s < 10) {
+							s = "0" + s
+						}
+						document.clockform.clock.value = hr + ":" + m + ":" + s;
+						setTimeout("gettime()", 100)
+					}
+				</script>
+
+				<body onload="gettime()">
+					<form name="clockform">
+						<input type="text" name="clock">
+					</form>
+				</body>
 			</div>
+			<div class="col-6 align-items-flex-start justify-content-flex-end" id="weather">
+			</div>
+		</div>
 		</div>
 	</header>
 	<main class="main container-fluid">
-	</main>
-	<footer class="container-fluid">
-		<div class="row">
-			<div class="col-12">
-				<div id="quote">
-				</div>
-			</div>
-		</div>
 		<div class="row" id="todo">
-			<div class="col-12" id="todo-error"></div>
+			<div class="col-4" id="todo-error"></div>
 			<form onsubmit="app.controllers.todoController.addTodo(event)">
 				<label for="todo">To Do:</label>
 				<input type="text" class="form-control" id="todo" name="todo" placeholder="Add a Task">
-				<button type="submit" class="btn btn-primary">Submit</button>
-		</div>
-		</form>
-		<div>
+				<button type="submit" class="btn btn-light">Submit</button>
+			</form>
 			<ul id="todos">
 			</ul>
+		</div>
+	</main>
+	<footer class="container-fluid">
+		<div class="row">
+			<div class="col-12" id="quote">
+			</div>
 		</div>
 	</footer>
 
