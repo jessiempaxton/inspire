@@ -8,7 +8,7 @@ export default class Todo {
 
   get Template() {
     return `
-    <li class="${this.completed ? 'strike' : ''}">${this.description}</li> <button type="button" class="btn btn-default" onclick="app.controllers.todoController.toggleTodoStatus('${this._id}')">Completed</button> <button type="button" class="btn btn-default" onclick="app.controllers.todoController.removeTodo('${this._id}')">Delete</button>
+    <li class="${this.completed ? 'strike' : ''}">${this.description}</li> <button type="button" class="btn btn-secondary" onclick="app.controllers.todoController.toggleTodoStatus('${this._id}')">Completed</button> <button type="button" class="btn btn-secondary" onclick="app.controllers.todoController.removeTodo('${this._id}')">Delete</button>
     `
   }
 
