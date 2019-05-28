@@ -47,8 +47,8 @@
 
 #todo {
   text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.667), 1px -1px 0 rgba(255, 255, 255, 0.667), -1px 1px 0 rgba(255, 255, 255, 0.667), 1px 1px 0 rgba(255, 255, 255, 0.667);
-  display: flex;
+  /* display: flex;
   align-items: flex-start;
   flex-direction: column;
-  padding-left: 5vh;
+  flex-wrap: wrap; */
 }
